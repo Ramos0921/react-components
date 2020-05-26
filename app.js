@@ -15,13 +15,13 @@ class GroceryListItem extends React.Component{
       //   done: false
       // };
       this.state = {
-        check: false
+        hover: false
       };
 
     };
-    onListItemClick() {
+    onListItemHover() {
       this.setState({
-        check: !this.state.check
+        hover: !this.state.hover
       });
     }
 
@@ -32,9 +32,9 @@ class GroceryListItem extends React.Component{
     // };
 
     render(){
-      let style = {'font-weight': this.state.check ? 'bold' : 'normal' };
+      let style = {'font-weight': this.state.hover ? 'bold' : 'normal' };
       return (
-      <li style ={style} onClick={this.onListItemClick.bind(this)}>{this.props.list}</li>
+      <li style ={style} onMouseOver={this.onListItemHover.bind(this)}>{this.props.list}</li>
       );
     };
 };
